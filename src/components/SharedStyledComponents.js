@@ -4,6 +4,7 @@ const colors = {
   blue: "#008CDA",
   grey: "#3030305C",
   white: "#FFFFFF",
+  black: "#000000",
 }
 
 const CenteredContainer = styled.div`
@@ -13,6 +14,10 @@ const CenteredContainer = styled.div`
   align-items: center;
 `;
 
+const ScreenContainer = styled.div`
+  height: 100vh;
+`;
+
 const SmoothDiv = styled.div`
   background-color: ${colors.grey};
   /* border-style: solid;
@@ -20,6 +25,24 @@ const SmoothDiv = styled.div`
   padding: 15px 10px;
   border-radius: 10px;
   border-color: ${colors.grey};
+`;
+
+const SmoothSolidWhiteDiv = styled.div`
+  background-color: ${colors.white};
+  /* border-style: solid;
+  border-width: 15px; */
+  padding: 15px 10px;
+  border-radius: 10px;
+  border-color: ${colors.white};
+`;
+
+const SmoothSolidBlackDiv = styled.div`
+  background-color: ${colors.black};
+  /* border-style: solid;
+  border-width: 15px; */
+  padding: 15px 10px;
+  border-radius: 10px;
+  border-color: ${colors.black};
 `;
 
 const RowFlexContainer = styled.div`
@@ -71,6 +94,7 @@ const StyledInput = styled.input`
   color: #333;
   transition: all 0.3s ease-out;
 
+  width: calc(100% - calc(8px + 5px));
   background-color: ${colors.white};
 
   :hover {
@@ -94,13 +118,42 @@ const Banner = styled.div`
   cursor: default;
 `;
 
+const MiniBanner = styled.div`
+  font-weight: bold;
+  font-size: 20px;
+  margin: 0px 20px 0px 10px;
+  color: ${colors.white}
+  cursor: default;
+`;
+
+const MicroBanner  = styled.div`
+  font-weight: bold;
+  font-size: 12px;
+  margin: 10px 20px 10px 10px;
+  color: ${colors.white}
+  cursor: default;
+`;
+
+const ScrollBody = styled.div`
+  display: block;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 100%;
+`;
+
 export {
   colors,
   CenteredContainer,
   SmoothDiv,
+  SmoothSolidWhiteDiv,
+  SmoothSolidBlackDiv,
   RowFlexContainer,
   ColumnFlexContainer,
   StyledButton,
   StyledInput,
   Banner,
+  MiniBanner,
+  MicroBanner,
+  ScrollBody,
+  ScreenContainer,
 };

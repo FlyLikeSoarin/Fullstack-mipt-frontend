@@ -1,42 +1,60 @@
 import React from 'react';
 import {
-  BrowserRouter as Router,
+  Router,
   Switch,
   Route,
   Link,
 } from "react-router-dom";
-import LoginPage from "./components/LoginPage.js"
-import RoomPage from "./components/RoomPage.js"
+
+import store from './store/store.js';
+import history from './history';
+import { fetchRooms, fetchRoomUsers, fetchRoomEntries } from './store/actions.js';
+
+import LoginManager from "./components/LoginManager.js";
+import RoomManager from "./components/RoomManager.js";
+import BrowseManager from "./components/BrowseManager.js";
+
+
+function updateState() {
+  store.dispatch(fetchRooms(store.getState().auth.authToken))
+  if (store.getState().variables.currentRoomID !== undefined) {
+    store.dispatch(fetchRoomEntries(
+      store.getState().variables.currentRoomID,
+      store.getState().auth.authToken,
+    ));
+    store.dispatch(fetchRoomUsers(
+      store.getState().variables.currentRoomID,
+      store.getState().auth.authToken,
+    ));
+  }
+  
+}
+
 
 class App extends React.Component {
   constructor(props) {
     super(props);
+    setInterval(() => (updateState()), 1000)
   }
 
   render() {
     let foreground = {zIndex: "9999999"};
     return (
-      <Router>
-        <Route path="/login" component={LoginPage}/>
-        <Route path="/register" component={LoginPage}/>
-        <Route path="/default" component={DefaultPage}/>
-        <Route path="/room" component={RoomPage} />
+      <Router history={history}>
+        <Route path="/login" component={LoginManager}/>
+        <Route path="/register" component={LoginManager}/>
+        <Route path="/browse" component={BrowseManager}/>
+        <Route path="/room/:id" component={RoomManager} />
         <Route exact={true} path="/" render={()=>("Home page!")}/>
         <br/>
         <div name="debugNavigation" style={foreground}>
-          <Link to="/"> Home </Link>
-          <Link to="/default"> Default Page </Link>
-          <Link to="/login"> Login Page </Link>
+          <Link to="/login" style={{color: 'black', textDecoration: 'None'}}> Login Page </Link>
+          <Link to="/browse" style={{color: 'black', textDecoration: 'None'}}> Browser </Link>
+          <Link to="/room" style={{color: 'black', textDecoration: 'None'}}> Room </Link>
         </div>
       </Router>
     );
   }
-}
-
-function DefaultPage() {
-  return (
-    'Kill me'
-  );
 }
 
 export default App;
