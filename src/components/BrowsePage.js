@@ -1,12 +1,12 @@
 import React from "react";
-import {Media, Player, controls} from "react-media-player";
+// import {controls} from "react-media-player";
 import {
   CenteredContainer,
   SmoothDiv,
-  SmoothSolidWhiteDiv,
-  SmoothSolidBlackDiv,
+  // SmoothSolidWhiteDiv,
+  // SmoothSolidBlackDiv,
   RowFlexContainer,
-  ColumnFlexContainer,
+  // ColumnFlexContainer,
   StyledButton,
   StyledInput,
   MiniBanner,
@@ -16,7 +16,7 @@ import {
 import RoomEntry from "./RoomEntry";
 import "../styles/gradient.css";
 
-const { PlayPause, MuteUnmute } = controls
+// const { PlayPause, MuteUnmute } = controls
 
 function createRooms(rooms) {
   var roomEntries = []
@@ -37,7 +37,7 @@ class BrowsePage extends React.Component {
   render() {
     const {
       rooms, token, status,
-      create, update, join,
+      create, join,
     } = this.props;
 
     let grow = {width: '150px'};

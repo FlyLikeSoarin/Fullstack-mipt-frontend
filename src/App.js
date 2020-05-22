@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   Router,
-  Switch,
+  // Switch,
   Route,
   Link,
 } from "react-router-dom";
@@ -27,7 +27,7 @@ function updateState() {
       store.getState().auth.authToken,
     ));
   }
-  
+
 }
 
 

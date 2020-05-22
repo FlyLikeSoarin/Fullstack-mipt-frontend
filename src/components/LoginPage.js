@@ -5,7 +5,7 @@ import {
   Link,
 } from "react-router-dom";
 import {
-  colors,
+  // colors,
   CenteredContainer,
   SmoothDiv,
   ColumnFlexContainer,
@@ -15,7 +15,7 @@ import {
   Banner,
 } from "./SharedStyledComponents.js";
 import "../styles/gradient.css";
-import InputForm from "./InputForm.js";
+// import InputForm from "./InputForm.js";
 
 class LoginPage extends React.Component {
   constructor(props) {

@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
-import { useParams } from 'react-router-dom';
+// import { useParams } from 'react-router-dom';
 import { fetchRoomUsers, fetchRoomEntries, uploadEntry, setRoom, setEntry, nextEntry, setUrl } from '../store/actions.js';
 import { STATUS } from '../web.js';
 import history from '../history.js';
-import state from '../store/store.js';
+// import state from '../store/store.js';
 
 import RoomPage from './RoomPage.js'
 
@@ -33,7 +33,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => ({
   update: (id, token, status) => {
-    if (status == STATUS.SUCCESS) {
+    if (status === STATUS.SUCCESS) {
       dispatch(fetchRoomUsers(id, token));
       dispatch(fetchRoomEntries(id, token));
     } else {
@@ -41,7 +41,7 @@ const mapDispatchToProps = (dispatch) => ({
     }
   },
   upload: (evt, ref, id, token, status) => {
-    if (status == STATUS.SUCCESS) {
+    if (status === STATUS.SUCCESS) {
       var url = ref.current[0].value;
       ref.current.reset()
       dispatch(uploadEntry(id, url, token));

@@ -18,7 +18,7 @@ const mapDispatchToProps = (dispatch) => {
       var password = ref.current[1].value;
       dispatch(login(username, password));
       setTimeout(() => {
-        if (store.getState().auth.authStatus == STATUS.SUCCESS) {
+        if (store.getState().auth.authStatus === STATUS.SUCCESS) {
           history.push('/browse')
         }
       }, 500);
@@ -29,7 +29,7 @@ const mapDispatchToProps = (dispatch) => {
       var email = ref.current[2].value;
       dispatch(register(username, email, password));
       setTimeout(() => {
-        if (store.getState().auth.authStatus == STATUS.SUCCESS) {
+        if (store.getState().auth.authStatus === STATUS.SUCCESS) {
           history.push('/browse')
         }
       }, 500);

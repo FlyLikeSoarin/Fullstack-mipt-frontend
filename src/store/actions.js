@@ -2,22 +2,13 @@ import fetch from 'cross-fetch';
 import {API_URL, STATUS, fetchOptions} from '../web.js';
 import {
   UPDATE_LOGIN,
-  LOGIN,
-  REGISTER,
   UPDATE_PROFILE,
-  FETCH_PROFILE,
   UPDATE_ROOMS,
-  FETCH_ROOMS,
   UPDATE_ROOM_ENTRIES,
-  FETCH_ROOM_ENTRIES,
   UPDATE_ROOM_USERS,
-  FETCH_ROOM_USERS,
   POST_ENTRY,
-  UPLOAD_ENTRY,
   POST_ROOM,
-  CREATE_ROOM,
   POST_ADD_ROOM,
-  JOIN_ROOM,
   SET_ROOM,
   SET_ENTRY,
   SET_URL,
@@ -30,7 +21,7 @@ function updateLogin(status, json) {
       type: UPDATE_LOGIN,
       status: status,
     }
-  } else if (status == STATUS.SUCCESS) {
+  } else if (status === STATUS.SUCCESS) {
     return {
       type: UPDATE_LOGIN,
       status: status,
@@ -59,7 +50,7 @@ function login(username, password) {
       }
     ).then(
       json => {
-        if (json.status == 'success') {
+        if (json.status === 'success') {
           dispatch(updateLogin(STATUS.SUCCESS, json));
         } else {
           alert('Operation failed. Reason: ' + json.token);
@@ -72,11 +63,11 @@ function login(username, password) {
   }
 }
 
-function logout() {
-  return {
-    type: RESET,
-  }
-}
+// function logout() {
+//   return {
+//     type: RESET,
+//   }
+// }
 
 function register(username, email, password) {
 
@@ -98,7 +89,7 @@ function register(username, email, password) {
       }
     ).then(
       json => {
-        if (json.status == 'success') {
+        if (json.status === 'success') {
           dispatch(updateLogin(STATUS.SUCCESS, json));
         } else {
           alert('Operation failed. Reason: ' + json.token);
@@ -118,7 +109,7 @@ function updateProfile(status, json) {
       type: UPDATE_PROFILE,
       status: status,
     }
-  } else if (status == STATUS.SUCCESS) {
+  } else if (status === STATUS.SUCCESS) {
     return {
       type: UPDATE_PROFILE,
       status: status,
@@ -157,7 +148,7 @@ function updateRooms(status, json) {
       type: UPDATE_ROOMS,
       status: status,
     }
-  } else if (status == STATUS.SUCCESS) {
+  } else if (status === STATUS.SUCCESS) {
     return {
       type: UPDATE_ROOMS,
       status: status,
@@ -203,7 +194,7 @@ function updateRoomEntries(status, room_id, json) {
       status: status,
       room_id: room_id,
     }
-  } else if (status == STATUS.SUCCESS) {
+  } else if (status === STATUS.SUCCESS) {
     return {
       type: UPDATE_ROOM_ENTRIES,
       status: status,
@@ -243,7 +234,7 @@ function updateRoomUsers(status, room_id, json) {
       status: status,
       room_id: room_id,
     }
-  } else if (status == STATUS.SUCCESS) {
+  } else if (status === STATUS.SUCCESS) {
     return {
       type: UPDATE_ROOM_USERS,
       status: status,

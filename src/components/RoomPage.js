@@ -1,11 +1,11 @@
 import React from "react";
-import {Media, Player, controls} from "react-media-player";
+import {Media, Player} from "react-media-player";
 import {Link} from "react-router-dom";
 import {
   CenteredContainer,
-  ScreenContainer,
+  // ScreenContainer,
   SmoothDiv,
-  SmoothSolidWhiteDiv,
+  // SmoothSolidWhiteDiv,
   RowFlexContainer,
   ColumnFlexContainer,
   StyledButton,
@@ -15,11 +15,11 @@ import {
   ScrollBody,
 } from "./SharedStyledComponents";
 import QueueEntry from "./QueueEntry";
-import MediaController from "./MediaController";
+// import MediaController from "./MediaController";
 import "../styles/gradient.css";
 import { getThumbnail } from "../web.js";
 
-const { PlayPause, MuteUnmute } = controls
+// const { PlayPause, MuteUnmute } = controls
 
 function roomEntries(entries, callback, update, playing) {
     try {
@@ -30,7 +30,7 @@ function roomEntries(entries, callback, update, playing) {
           title={entry.title.substr(0, 150)}
           duration={entry.duration}
           thumbUrl={getThumbnail(entry.url)}
-          playing={(i == playing)}
+          playing={(i === playing)}
           onClick={((i) => (() => {
             callback(i);
           }))(i)}
@@ -56,13 +56,13 @@ class RoomPage extends React.Component {
 
   updateUrl(evt) {
     const {playNext, entries, playingPos, playingUrl, updateUrl} = this.props
-    if (evt.progress == 1) {
+    if (evt.progress === 1) {
       playNext();
     }
-    if (entries != undefined && playingPos != undefined) {
-      if (entries[playingPos] != undefined) {
-        if (entries[playingPos].url != undefined) {
-          if (entries[playingPos].url != playingUrl) {
+    if (entries !== undefined && playingPos !== undefined) {
+      if (entries[playingPos] !== undefined) {
+        if (entries[playingPos].url !== undefined) {
+          if (entries[playingPos].url !== playingUrl) {
             updateUrl(entries[playingPos].url)
           }
         }
@@ -74,21 +74,21 @@ class RoomPage extends React.Component {
     const {
       id,
       title,
-      users,
+      // users,
       entries,
       upload,
       token,
       status,
       playingPos,
       playingUrl,
-      updateUrl,
+      // updateUrl,
       setPlaying,
     } = this.props;
 
     let grow = {flexGrow: "1"};
     let leftMargin = {marginLeft: "10px"};
     let panelDimentions = {height: "400px", width: "800px"};
-    let absolute = {position: 'absolute'}
+    // let absolute = {position: 'absolute'}
     let scrollHeight = {height: "calc(100%)", width: '470px'};
     let bannerPosition = {position: 'fixed', top: '0px', left: '0px'};
     let titlePosition = {position: 'relative', top: '-10px'};

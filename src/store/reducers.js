@@ -1,22 +1,11 @@
 import {STATUS} from '../web.js';
 import {
   UPDATE_LOGIN,
-  LOGIN,
-  REGISTER,
   UPDATE_PROFILE,
-  FETCH_PROFILE,
   UPDATE_ROOMS,
-  FETCH_ROOMS,
   UPDATE_ROOM_ENTRIES,
-  FETCH_ROOM_ENTRIES,
   UPDATE_ROOM_USERS,
-  FETCH_ROOM_USERS,
   POST_ENTRY,
-  UPLOAD_ENTRY,
-  POST_ROOM,
-  CREATE_ROOM,
-  POST_ADD_ROOM,
-  JOIN_ROOM,
   SET_ROOM,
   SET_ENTRY,
   SET_URL,
@@ -62,7 +51,7 @@ function roomListReducer(rooms = {}, action) {
 
     default:
       if (action.room_id !== undefined) {
-        var updatedRooms = Object.assign({}, rooms);
+        updatedRooms = Object.assign({}, rooms);
         updatedRooms[action.room_id] = roomReducer(rooms[action.room_id], action);
         return Object.assign({}, rooms, updatedRooms);
       }
@@ -105,11 +94,11 @@ function roomReducer(room={
       else {
         if (action.entries.length > room.entries) {
           for (var intersection = 0; intersection < room.entries; intersection++) {
-            if (room.entries[intersection].id == action.entries.slice(-1)[0].id) {
+            if (room.entries[intersection].id === action.entries.slice(-1)[0].id) {
               break;
             }
           }
-          var prefix = action.entries.length - intersection;
+          // var prefix = action.entries.length - intersection;
 
           return Object.assign({}, room, {
             entriesFetchStatus: action.status,
@@ -176,7 +165,7 @@ function variablesReducer(variables={
     case SET_ROOM:
       return Object.assign({}, variables, {currentRoomID: action.id});
     case SET_ENTRY:
-      if (action.position == 'next' && variables.currentlyPlaying !== undefined) {
+      if (action.position === 'next' && variables.currentlyPlaying !== undefined) {
         return Object.assign({}, variables, {currentlyPlaying: variables.currentlyPlaying + 1})
       }
       return Object.assign({}, variables, {currentlyPlaying: action.position});
