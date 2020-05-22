@@ -1,5 +1,7 @@
 {
   "name": "broadcast",
+  "homepage": "https://flylikesoarin.github.io/Fullstack-mipt-frontend",
+  "description": "Web app for broadcast project, as a part of mipt-fullstack course",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
