@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Fullstack-mipt-frontend/static/css/main.fc8e34b4.chunk.css",
+    "main.js": "/Fullstack-mipt-frontend/static/js/main.0c66bca8.chunk.js",
+    "main.js.map": "/Fullstack-mipt-frontend/static/js/main.0c66bca8.chunk.js.map",
+    "runtime-main.js": "/Fullstack-mipt-frontend/static/js/runtime-main.46e14984.js",
+    "runtime-main.js.map": "/Fullstack-mipt-frontend/static/js/runtime-main.46e14984.js.map",
+    "static/js/2.8b96946e.chunk.js": "/Fullstack-mipt-frontend/static/js/2.8b96946e.chunk.js",
+    "static/js/2.8b96946e.chunk.js.map": "/Fullstack-mipt-frontend/static/js/2.8b96946e.chunk.js.map",
+    "index.html": "/Fullstack-mipt-frontend/index.html",
+    "precache-manifest.9148dfb81dba488e642175c7dabe5842.js": "/Fullstack-mipt-frontend/precache-manifest.9148dfb81dba488e642175c7dabe5842.js",
+    "service-worker.js": "/Fullstack-mipt-frontend/service-worker.js",
+    "static/css/main.fc8e34b4.chunk.css.map": "/Fullstack-mipt-frontend/static/css/main.fc8e34b4.chunk.css.map",
+    "static/js/2.8b96946e.chunk.js.LICENSE": "/Fullstack-mipt-frontend/static/js/2.8b96946e.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.46e14984.js",
+    "static/js/2.8b96946e.chunk.js",
+    "static/css/main.fc8e34b4.chunk.css",
+    "static/js/main.0c66bca8.chunk.js"
+  ]
+}
