@@ -1,0 +1,31 @@
+{
+  "node": {
+    "version": "v12.11.1",
+    "description": "
+      Javascript interpreter.
+      List of node packages can be found in package.json.
+      Run <npm i> to install packages
+    "
+  },
+  "docker": {
+    "version": "19.03.2"
+  },
+  "docker-compose": {
+    "version": "1.24.1"
+  },
+  "nginx": {
+    "version": "1.18.0",
+  },
+  "browsers": {
+    "safari": "13.1",
+    "chrome": "83.0.4103.61",
+    "firefox": "74.0"
+  },
+  "MacOS": {
+    "version": "10.15.4",
+  },
+  "Resources": {
+    "RAM": "1gb",
+    "CPU cores": "1",
+  }
+}
