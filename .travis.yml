@@ -13,3 +13,4 @@ deploy:
   on:
     branch:
       - Dev-Ops-CI
+      - master
